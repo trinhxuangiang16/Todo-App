@@ -1,13 +1,3 @@
-// DOM elements
-
-let errorMessage = document.getElementById("error-message");
-
-let searchInput = document.getElementById("search-input");
-let sortSelect = document.getElementById("sort-select");
-let filterCategory = document.getElementById("filter-category");
-
-let todoList = document.getElementById("todo-list");
-
 let turnOnLoading = () => {
   document.getElementById("loading").style.display = "flex";
 };
