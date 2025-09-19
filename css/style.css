@@ -1,0 +1,176 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #a6cdc6, #bdd1c5);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+  color: #2d3047;
+}
+
+.todo-app {
+  background: white;
+  padding: 28px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 720px;
+}
+.todo-app .title {
+  text-align: center;
+  color: #2d3047;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 28px;
+  text-shadow: 0 0 6px rgba(189, 209, 197, 0.4);
+}
+.todo-app .todo-input {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.todo-app .todo-input input,
+.todo-app .todo-input select,
+.todo-app .todo-input button {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgb(138.7068965517, 143.6206896552, 181.2931034483);
+  font-size: 14px;
+}
+.todo-app .todo-input input,
+.todo-app .todo-input select {
+  background: rgb(247.6366906475, 250.8633093525, 250.2841726619);
+}
+.todo-app .todo-input #todo-input {
+  flex: 1.6;
+}
+.todo-app .todo-input #deadline-input {
+  flex: 1;
+}
+.todo-app .todo-input #category-input {
+  flex: 1;
+}
+.todo-app .todo-input #add-btn {
+  background: linear-gradient(135deg, #f5866a, #a36361);
+  color: white;
+  border: none;
+  cursor: pointer;
+  flex: 0.5;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(245, 134, 106, 0.4);
+}
+.todo-app .todo-input #add-btn:hover {
+  background: linear-gradient(135deg, rgb(242.4339622642, 102.9509433962, 67.7660377358), rgb(138.5344, 82.4192, 80.6656));
+  box-shadow: 0 0 12px rgba(163, 99, 97, 0.7);
+}
+.todo-app .todo-input #update-btn {
+  background: linear-gradient(135deg, #eecc8c, #2d3047);
+  color: white;
+  border: none;
+  cursor: pointer;
+  flex: 0.5;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(45, 48, 71, 0.3);
+  display: none;
+}
+.todo-app .todo-input #update-btn:hover {
+  background: linear-gradient(135deg, rgb(232.7454545455, 188.2363636364, 104.4545454545), rgb(29.1724137931, 31.1172413793, 46.0275862069));
+  box-shadow: 0 0 12px rgba(45, 48, 71, 0.6);
+}
+.todo-app .error-message {
+  color: #a36361;
+  font-size: 13px;
+  margin-bottom: 10px;
+  min-height: 18px;
+}
+.todo-app .controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.todo-app .controls input,
+.todo-app .controls select {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid rgb(138.7068965517, 143.6206896552, 181.2931034483);
+  font-size: 14px;
+  flex: 1;
+  background: white;
+}
+.todo-app .todo-list {
+  list-style: none;
+  padding: 0;
+}
+.todo-app .todo-list li {
+  background: #eecc8c;
+  padding: 14px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+.todo-app .todo-list li:hover {
+  background: rgb(244.5681818182, 223.7045454545, 184.4318181818);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+}
+.todo-app .todo-list li .task-info {
+  display: flex;
+  flex-direction: column;
+}
+.todo-app .todo-list li .task-info label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.todo-app .todo-list li .task-info label input[type=checkbox] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+.todo-app .todo-list li .task-info label .task-text {
+  font-weight: 600;
+}
+.todo-app .todo-list li .task-info .deadline {
+  font-size: 12px;
+  color: rgb(25.2155172414, 26.8965517241, 39.7844827586);
+}
+.todo-app .todo-list li .task-info .category {
+  font-size: 12px;
+  font-style: italic;
+  color: #2d3047;
+}
+.todo-app .todo-list li .actions button {
+  margin-left: 6px;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  transition: 0.25s;
+}
+.todo-app .todo-list li .actions button.edit {
+  background: #bdd1c5;
+  color: #2d3047;
+}
+.todo-app .todo-list li .actions button.edit:hover {
+  background: rgb(158.9464285714, 188.0535714286, 170.5892857143);
+  box-shadow: 0 0 8px rgba(189, 209, 197, 0.6);
+  color: white;
+}
+.todo-app .todo-list li .actions button.delete {
+  background: #a36361;
+  color: white;
+}
+.todo-app .todo-list li .actions button.delete:hover {
+  background: rgb(132.088, 78.584, 76.912);
+  box-shadow: 0 0 8px rgba(163, 99, 97, 0.8);
+}/*# sourceMappingURL=style.css.map */

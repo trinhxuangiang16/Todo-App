@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App Pro</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="todo-app">
+      <div class="container">
+        <h1 class="title">Todo List Personal App</h1>
+        <!-- Input khu vực thêm task -->
+        <form id="form" class="todo-input">
+          <input type="text" id="todo-input" placeholder="Enter a task..." />
+          <input type="date" id="deadline-input" placeholder="type" />
+          <select id="category-input">
+            <option value="">Select category</option>
+            <option value="work">Work</option>
+            <option value="study">Study</option>
+            <option value="personal">Personal</option>
+          </select>
+          <button type="button" onclick="createTodo()" id="add-btn">Add</button>
+          <button type="button" onclick="updateTodoApp()" id="update-btn">
+            Update
+          </button>
+        </form>
+        <p id="error-message" class="error-message"></p>
+
+        <!-- Search & Sort -->
+        <div class="controls">
+          <input
+            onkeyup="checkSearch()"
+            type="text"
+            id="search-input"
+            placeholder="Search task..."
+          />
+          <select id="sort-select" onchange="sortTodo(this.value)">
+            <option value="">Sort by...</option>
+            <option value="asc">Sooner → Later</option>
+            <option value="desc">Later → Sooner</option>
+            <option value="status">Status (Not done → Done)</option>
+          </select>
+          <select id="filter-category" onchange="sortTodo(this.value)">
+            <option value="">All categories</option>
+            <option value="work">Work</option>
+            <option value="study">Study</option>
+            <option value="personal">Personal</option>
+          </select>
+        </div>
+
+        <!-- Danh sách todo -->
+        <ul id="todo-list" class="todo-list"></ul>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/service.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
